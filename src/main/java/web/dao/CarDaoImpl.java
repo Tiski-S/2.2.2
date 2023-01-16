@@ -22,7 +22,7 @@ public class CarDaoImpl implements CarDao{
 
 
     @Override
-    public List<Car> getCar(List<Car> carList, int count) {
+    public List<Car> getCar(int count) {
         if(count >= 5){
             return carList;
         }

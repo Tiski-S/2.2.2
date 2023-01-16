@@ -8,14 +8,16 @@ import web.model.Car;
 import java.util.List;
 @Service
 public class CarServiceImpl implements CarService{
-    CarDao carDao;
+    private final CarDao carDao;
 
 
-    public CarServiceImpl(@Qualifier("carDaoImpl") CarDao carDao) {
+    public CarServiceImpl( CarDao carDao) {
         this.carDao = carDao;
     }
     @Override
-    public List<Car> getCar(List<Car> carList, int count) {
-        return carDao.getCar(carList, count);
+    public List<Car> getCar( int count) {
+        return carDao.getCar(count);
     }
+
+
 }
